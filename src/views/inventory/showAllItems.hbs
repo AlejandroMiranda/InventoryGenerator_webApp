@@ -1,0 +1,13 @@
+<h1 id="categoryName">{{categoryName}}</h1>
+<a href="/inventory">Regresar</a>
+<h5>Articulos</h5>
+<ul>
+    {{#each items}}
+        <li><a name="{{id}}">{{name}} - ({{qtyReal}})</a></li>
+    {{/each}}
+</ul>
+
+<button type="button" id="updateButton">Actualizar inventarios</button>
+
+<script src="/js/showAllItems.js"></script>
+<script src="/js/ajaxMethods.js"></script>

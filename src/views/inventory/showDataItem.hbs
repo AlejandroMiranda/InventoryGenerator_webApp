@@ -1,0 +1,18 @@
+<h5 id="categoryName">{{categoryName}}</h5>
+<h3>{{item.name}}</h1>
+<p>[código de barras: <span  id="itemId">{{item.id}}</span>]</p>
+<a id="backButton">Regresar</a>
+<table>
+    <tr>
+        <th>Sistema</th>
+        <th>Real</th>
+    </tr>
+    <tr>
+        <td>{{item.qtySys}}</td>
+        <td><input type="number" name="qtyReal" id="qty" value="{{item.qtyReal}}"></td>
+    </tr>
+</table>
+<button type="button" id="save">Guardar</button>
+
+<script src="/js/showDataItem.js"></script>
+<script src="/js/ajaxMethods.js"></script>
