@@ -1,13 +1,19 @@
-<h1 id="categoryName">{{categoryName}}</h1>
-<a href="/inventory">Regresar</a>
-<h5>Articulos</h5>
-<ul>
-    {{#each items}}
-        <li><a name="{{id}}">{{name}} - ({{qtyReal}})</a></li>
-    {{/each}}
-</ul>
+<div class="content">
+    <header>
+        <h1 id="categoryName"  class="title">{{categoryName}}</h1>
+        <a href="/inventory" class="back">Regresar</a>
+    </header>
+    <section>
+        <h5 class="subtitle">Articulos</h5>
+        <ul>
+            {{#each items}}
+                <li><a name="{{id}}">{{name}} - ({{qtyReal}})</a></li>
+            {{/each}}
+        </ul>
 
-<button type="button" id="updateButton">Actualizar inventarios</button>
+        <button type="button" id="updateButton">Actualizar inventarios</button>
+    </section>
+</div>
 
 <script src="/js/showAllItems.js"></script>
 <script src="/js/ajaxMethods.js"></script>
