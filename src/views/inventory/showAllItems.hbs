@@ -7,7 +7,7 @@
         <h5 class="subtitle">Articulos</h5>
         <ul>
             {{#each items}}
-                <li><a name="{{id}}">{{name}} - ({{qtyReal}})</a></li>
+                <li><a name="{{id}}">{{name}} - (<span {{#if (qtyNotCero qtyReal)}}class="qty" {{/if}}>{{qtyReal}}</span>)</a></li>
             {{/each}}
         </ul>
 

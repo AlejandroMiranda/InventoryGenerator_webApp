@@ -46,6 +46,10 @@ section{
     padding: 0.5rem;
 }
 
+footer{
+    background-color: #fff;
+}
+
 table{
     width: 100%;
     margin: 5px;
@@ -74,5 +78,21 @@ table{
 
 #itemId{
     color:#0048f8;
+    font-weight: bold;
+}
+
+.itemOptions{
+    display: flex;
+}
+
+.itemOptions > div > a{
+    display: block;
+    border:solid;
+    border-radius: 15px;
+    background-color: #ddd;
+}
+
+.qty{
+    color: #fff;
     font-weight: bold;
 }

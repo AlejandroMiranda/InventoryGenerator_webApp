@@ -2,7 +2,20 @@
     <header>
         <h5 id="categoryName" class="subtitle">{{categoryName}}</h5>
         <h3  class="title">{{item.name}}</h1>
-        <p>[código de barras: <span  id="itemId">{{item.id}}</span>]</p>
+        <div>
+            <div>
+                [código de barras: <span  id="itemId">{{item.id}}</span>]                
+            </div>
+            <div>
+                [Costo: <span  id="itemCost">${{item.cost}}</span>]
+            </div>
+            <div>
+                [Precio: <span  id="itemPrice">${{item.price}}</span>]
+            </div>
+            <div>
+                [Ganancia: <span  id="itemGain">{{item.gain}}</span>]
+            </div>
+        </div>
         <a id="backButton" class="back">Regresar</a>
     </header>
     <section>
@@ -16,12 +29,29 @@
             <tbody>
                 <tr>
                     <td>{{item.qtySys}}</td>
-                    <td><input type="number" name="qtyReal" id="qty" value="{{item.qtyReal}}" class="qtyReal"/></td>
+                    <td><input type="number" min="0" max="99999" name="qtyReal" id="qty" value="{{item.qtyReal}}" class="qtyReal"/></td>
                 </tr>
             </tbody>
         </table>
-        <button type="button" id="save">Guardar</button>
     </section>
+    <footer>
+        Guardar valor y...
+        <div class="itemOptions">
+            {{#if itemBefore}}
+                <div class="itemBefore">
+                    <a id="iBefore" name="{{itemBefore.id}}">anterior: {{itemBefore.name}}</a>
+                </div>
+            {{/if}}
+            <div class="save">
+                <a id="save">Solo guardar</a>
+            </div>
+            {{#if itemAfter}}
+                <div class="itemAfter">
+                    <a id="iAfter" name="{{itemAfter.id}}">siguiente: {{itemAfter.name}}</a>
+                </div>
+            {{/if}}
+        </div>
+    </footer>
 </div>
 
 

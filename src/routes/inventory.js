@@ -41,8 +41,10 @@ router.get("/data/:categoryName/:itemId", (req, res) =>{
     const category = globalThis.listCategory.find( element => element.name == categoryName);
     const data = {};
     data.categoryName = categoryName;
-    const item = category.GetItemById(itemId);
-    data.item = item;
+    data.item = category.GetItemById(itemId);
+    data.itemBefore = category.GetItemBeforeId(itemId);
+    data.itemAfter = category.GetItemAfterId(itemId);
+    console.log(data);
 
     res.render("inventory/showDataItem", data);
 });
@@ -70,6 +72,12 @@ router.put("/write", (req, res) =>{
 
     globalThis.listCategory = [];
     res.send(true);
+});
+
+router.get("/scanqr/:categoryName", (req, res) =>{
+    const { categoryName } = req.params;
+    
+    res.render("inventory/scanqr", {categoryName});
 });
 
 module.exports = router;

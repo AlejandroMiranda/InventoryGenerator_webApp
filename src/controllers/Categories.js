@@ -25,6 +25,18 @@ class Categories {
         return this.items.find(element => element.id == id);
     }
 
+    GetItemBeforeId(id){
+        let index = this.items.findIndex(element => element.id == id);
+        index = index -1;
+        return this.items[index];
+    }
+
+    GetItemAfterId(id){
+        let index = this.items.findIndex(element => element.id == id);
+        index++;
+        return this.items[index];
+    }
+
     GetItemsList(){
         this.items.sort((a, b) => {
             if(a.name < b.name)

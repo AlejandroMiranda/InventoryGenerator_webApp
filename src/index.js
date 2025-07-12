@@ -4,10 +4,13 @@ const path = require("path");
 const exphbs = require("express-handlebars").engine;
 // const flash = require("connect-flash");
 const cookieParser = require("cookie-parser");
+const config = require('./config.json');
+globalThis.config = config;
 
+require('dotenv').config({override: true});
 
 const app = express();
-app.set("port", process.argv[2] || process.env.PORT || 4100);
+app.set("port", process.argv[2] || process.env.PORT || 4101);
 app.set("views", path.join(__dirname, "views"));
 app.set("public", path.join(__dirname, "public"));
 
@@ -33,7 +36,7 @@ globalThis.listCategory = [];
 
 //Routes
 app.use(require("./routes"));
-app.use('/tools', require("./routes/tools"));
+app.use('/file', require("./routes/file"));
 app.use('/inventory', require("./routes/inventory"));
 
 app.use((req, res) => {

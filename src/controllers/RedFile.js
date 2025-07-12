@@ -13,8 +13,10 @@ ReadFile.Read = async () => {
         if(index != 0){
             const id = data[0];
             const name = data[1].toUpperCase();
+            const cost = data[2];
+            const price = data[3];
             const qty = data[6];
-            const item = new Items(id, name, qty);
+            const item = new Items(id, name, qty, cost, price);
             
             if(!isNaN(qty)){
                 const categoryName = data[5].toUpperCase();
