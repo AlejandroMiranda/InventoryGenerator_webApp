@@ -58,8 +58,12 @@ window.onload = () => {
     saveButton.addEventListener('click', saveButtonEvent);
 
     const itemBefore = document.getElementById("iBefore");
-    itemBefore.addEventListener('click', saveBefore);
-    
+    if(itemBefore != undefined){
+        itemBefore.addEventListener('click', saveBefore);
+    }
+
     const itemAfter = document.getElementById("iAfter");
-    itemAfter.addEventListener('click', saveAfter);
+    if(itemAfter != undefined){
+        itemAfter.addEventListener('click', saveAfter);
+    }
 };

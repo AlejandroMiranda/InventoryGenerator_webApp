@@ -44,7 +44,6 @@ router.get("/data/:categoryName/:itemId", (req, res) =>{
     data.item = category.GetItemById(itemId);
     data.itemBefore = category.GetItemBeforeId(itemId);
     data.itemAfter = category.GetItemAfterId(itemId);
-    console.log(data);
 
     res.render("inventory/showDataItem", data);
 });
